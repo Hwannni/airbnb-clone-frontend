@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { getRooms } from "../api";
 import Room from "../components/Room";
 import RoomSkeleton from "../components/RoomSkeleton";
+import { IRoomList } from "../types";
 
 interface IPhoto {
   pk: string;
@@ -23,7 +24,7 @@ interface IRoom {
 
 export default function Home() {
   // 캐싱 작업(저장)에 사용되는 key -> rooms
-  const { isLoading, data } = useQuery<IRoom[]>(["rooms"], getRooms);
+  const { isLoading, data } = useQuery<IRoomList[]>(["rooms"], getRooms);
   return (
     <Grid
       mt={10}
@@ -57,12 +58,9 @@ export default function Home() {
       ) : null}
       {data?.map((room) => (
         <Room
-        key={room.pk}
-        pk={room.pk}
-          imageUrl={
-            room.photos[0]?.file ??
-            `https://source.unsplash.com/random/450x${450 + "450x450"}`
-          }
+          key={room.pk}
+          pk={room.pk}
+          imageUrl={room.photos[0].file}
           name={room.name}
           rating={room.rating}
           city={room.city}
