@@ -3,7 +3,6 @@ export interface IRoomPhotoPhoto {
   file: string;
   description: string;
 }
-
 export interface IRoomList {
   pk: number;
   name: string;
@@ -14,18 +13,15 @@ export interface IRoomList {
   is_owner: boolean;
   photos: IRoomPhotoPhoto[];
 }
-
 export interface IRoomOwner {
   name: string;
   avatar: string;
   username: string;
 }
-
 export interface IAmenity {
   name: string;
   description: string;
 }
-
 export interface IRoomDetail extends IRoomList {
   created_at: string;
   updated_at: string;
@@ -44,9 +40,21 @@ export interface IRoomDetail extends IRoomList {
   owner: IRoomOwner;
   amenities: IAmenity[];
 }
-
 export interface IReview {
   payload: string;
   rating: number;
   user: IRoomOwner;
+}
+
+export interface IUser {
+  last_login: string;
+  username: string;
+  email: string;
+  date_joined: string;
+  avatar: string;
+  name: string;
+  is_host: boolean;
+  gender: string;
+  language: string;
+  currency: string;
 }

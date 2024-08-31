@@ -25,6 +25,7 @@ export default function RoomDetail() {
   >([`rooms`, roomPk, `reviews`], getRoomReviews);
   return (
     <Box
+      pb={40}
       mt={10}
       px={{
         base: 10,

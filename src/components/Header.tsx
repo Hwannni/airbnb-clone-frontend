@@ -70,10 +70,10 @@ export default function Header() {
               </LightMode>
             </>
           ) : (
-            <Avatar size={"md"} />
+            // 우측 상단 유저화면에 이름 혹은 프로필사진 등록
+            <Avatar name={user?.name} src={user?.avatar} size={"md"} />
           )
         ) : null}
-        {/* 페이지를 조금 더 어둡게하여, Modal이 강조됨 */}
       </HStack>
       <LoginModal isOpen={isLoginOpen} onClose={onLoginClose} />
       <SignUpModal isOpen={isSignUpOpen} onClose={onSignUpClose} />
