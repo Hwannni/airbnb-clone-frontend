@@ -31,10 +31,10 @@ export const logOut = () =>
     })
     .then((response) => response.data);
 
-export const githubLogIn = (code: string) =>
+export const kakaoLogin = (code: string) =>
   instance
     .post(
-      `/users/github`,
+      `/users/kakao`,
       { code },
       {
         headers: {

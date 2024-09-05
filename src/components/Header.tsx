@@ -48,7 +48,6 @@ export default function Header() {
       position: "bottom-right",
     });
     await logOut();
-    // 쿼리클라이언트가 대장
     queryClient.refetchQueries(["me"]);
     toast.update(toastId, {
       status: "success",
